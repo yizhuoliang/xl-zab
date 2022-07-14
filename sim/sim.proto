@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "./";
+
+package sim;
+
+// leader service difinition
+service Simulation {
+        rpc Broadcast (BroadcastTxn) returns (AcknowledgementTxn) {
+    }
+}
+
+// The braodcast message
+message BroadcastTxn {
+    string content = 1;
+}
+
+message AcknowledgementTxn {
+    string content = 1;
+}
